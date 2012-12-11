@@ -247,7 +247,7 @@ filename is a Ruby implementation file."
     (if filename
         (progn
           (setq default-directory (or (ruby-test-rails-root filename) (ruby-test-ruby-root filename)))
-          (compilation-start (ruby-test-command filename) view-mode))
+          (pop-to-buffer (compilation-start (ruby-test-command filename) view-mode)))
       (message ruby-test-not-found-message))))
 
 (defun ruby-test-run-at-point ()
